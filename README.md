@@ -1,13 +1,13 @@
 # Finance
+### PMs
+* Aashna Mehta - avmehta2
+* Matt Geimer - mgeimer2
 
-Markup : * PMs
-              * Avmehta2
-              * Mgeimer2
-         * Students:
-              * Arahim2
-              * Jflemi9
-              * jz40
-              * zhans5
-              * sajay2
-              * keweis2
+### Members
+* Ahad Rahim - Arahim2
+* James - Jflemi9
+* Jiangnan - jz40
+* Patina - zhans5
+* Sid - sajay2
+* Kewei Song - keweis2
 
