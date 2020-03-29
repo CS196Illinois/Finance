@@ -1,0 +1,26 @@
+import pandas as pd
+crimeData = pd.read_csv("/Users/ahad/Desktop/SacramentocrimeJanuary2006.csv")
+print(crimeData.head())
+
+ct = 0
+for col in crimeData.columns: # looping through the columns
+    ct = ct + 1
+
+print ("{} are {}".format("number of columns", ct))
+
+crimeDistricts = crimeData[['district']] # storing the districts in a new column
+mostDangerousDistrict = crimeDistricts.mode() # using pandas mode() function to get the district with the most crime
+print("The most dangerous district is district", {mostDangerousDistrict.values[0][0]})
+
+# #
+allCrimeType = crimeData[['crimedescr']] # stores the description of the crimes in a data frame
+# #
+print(allCrimeType)
+#
+# # searching each crime description for the keyword 'HOMICIDE' and storing it in a data frame
+# homicides = crimeData[allCrimeType.apply(lambda row: row.astype(str).str.contains('HOMICIDE').any(), axis=1)]
+#
+# # stores the address, date and time of each of the homicides
+# addressOfHomicide = homicides[['address', 'cdatetime']] #
+#
+# print(addressOfHomicide)
