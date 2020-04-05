@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from UI import SPList
+from xRealm.view import SPList
 
 HEIGHT = 800
 WIDTH = 200
@@ -40,7 +40,7 @@ buyButton.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
 stocks = tk.StringVar()
 stocks.set(SPList.needTickers())
 stocksDisplay = tk.Listbox(StockList, listvariable=stocks)
-stocksDisplay.place()
+stocksDisplay.place(side='top', fill='y')
 
 
 #ex1 = tk.Frame(StockList, bg=ColorBloc)
