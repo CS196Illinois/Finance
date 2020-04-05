@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from UI import SPList
+
 HEIGHT = 800
 WIDTH = 200
 
@@ -35,7 +37,10 @@ sellButton.place(relx=0, rely=0, relwidth=1, relheight=0.5)
 buyButton = tk.Button(trade, text='buy', bg=ColorBuy)
 buyButton.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
 
-
+stocks = tk.StringVar()
+stocks.set(SPList.needTickers())
+stocksDisplay = tk.Listbox(StockList, listvariable=stocks)
+stocksDisplay.place()
 
 
 #ex1 = tk.Frame(StockList, bg=ColorBloc)
