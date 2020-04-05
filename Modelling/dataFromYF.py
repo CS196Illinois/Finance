@@ -6,13 +6,13 @@ import yfinance as yf
 tickers = ["TSLA", "AAPL", "GE", "AMZN"]
 
 # the range of data can be adjusted by changing start and the end
-yf.download(tickers, start = "2015-01-01", end = "2020-01-01")
+print(yf.download(tickers, start = "2015-01-01", end = "2020-01-01"))
 
 # or set name of the stocks in a tuple
 # access the tuple by using dot notation
-
-tickers = yf.Tickers('ge goog spce ccl')
-tickers.goog.history(period = "2mo")
+#
+# tickers = yf.Tickers('ge goog spce ccl')
+# tickers.goog.history(period = "2mo")
 
 #other info can be acquired using
 
