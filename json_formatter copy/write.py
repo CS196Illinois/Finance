@@ -17,7 +17,7 @@ class Writer:
         Writer.user['previous_account_values'][str(round(t.time() * 1000000))] = value
 
     def add_stock(self, name):
-            Writer.user['portfolio']['stock: ' + name] = {
+            Writer.user['portfolio']['stock - ' + name] = {
                 'current_qty' : 0,
                 'transactions' : {}
             }
