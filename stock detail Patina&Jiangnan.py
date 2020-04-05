@@ -89,5 +89,6 @@ btn3 = Button(window, text = "Stock Price", command = clicked3)
 btn0.grid(column = 4, row = 2)
 btn1.grid(column = 4, row = 4)
 btn2.grid(column = 4, row = 5)
-SyntaxError: multiple statements found while compiling a single statement
+btn3.grid(column = 4, row = 6)
+
 >>> 
