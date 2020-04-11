@@ -90,5 +90,3 @@ btn0.grid(column = 4, row = 2)
 btn1.grid(column = 4, row = 4)
 btn2.grid(column = 4, row = 5)
 btn3.grid(column = 4, row = 6)
-
->>> 
