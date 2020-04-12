@@ -31,11 +31,15 @@ lb.insert(3, 'stock g')
 lb.insert(4, 'stock h')
 lb.pack()
 
-
+"""""
 var5 = tk.StringVar()
 tem = tk.Label(window, bg='yellow', width=16, textvariable=var5)
 var5.set("wait for your decision")
-
+"""
+var5 = tk.StringVar()
+l = tk.Label(window, bg='yellow', width=100, textvariable=var5)
+l.pack()
+var5.set('wait for your selection')
 def buy_command():
     var5.set("I press the buy button. I need to increase something in list. And my account balance will decrease")
 
