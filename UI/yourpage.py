@@ -56,6 +56,7 @@ l.pack()
 var6.set('wait for your selection')
 def sell_command():
     var6.set("I press the sell button. I need to decrease something in list. And my account balance will increase")
+    lb.delete(lb.curselection())
 
 
 sellbutton = tk.Button(window, text='sellbutton', width=15, height=2, command=sell_command)
