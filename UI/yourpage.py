@@ -3,7 +3,7 @@ import pickle
 import tkinter.messagebox
 window = tk.Tk()
 window.title('Your main page')
-window.geometry('450x300')
+window.geometry('900x600')
 var1 = tk.StringVar()
 l = tk.Label(window, bg='yellow', width=16, textvariable=var1)
 l.pack()
@@ -46,5 +46,19 @@ def buy_command():
 
 buybutton = tk.Button(window, text='buybutton', width=15, height=2, command=buy_command)
 buybutton.pack()
+
+
+
+var6 = tk.StringVar()
+l = tk.Label(window, bg='yellow', width=100, textvariable=var6)
+l.pack()
+var6.set('wait for your selection')
+def sell_command():
+    var6.set("I press the sell button. I need to decrease something in list. And my account balance will increase")
+
+
+sellbutton = tk.Button(window, text='sellbutton', width=15, height=2, command=sell_command)
+sellbutton.pack()
+
 
 window.mainloop()
