@@ -42,6 +42,7 @@ l.pack()
 var5.set('wait for your selection')
 def buy_command():
     var5.set("I press the buy button. I need to increase something in list. And my account balance will decrease")
+    lb.insert(4, 'stock neeeeewww')
 
 
 buybutton = tk.Button(window, text='buybutton', width=15, height=2, command=buy_command)
