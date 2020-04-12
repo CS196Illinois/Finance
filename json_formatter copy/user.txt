@@ -1,0 +1,119 @@
+{
+    "account_balance": 100000.0,
+    "portfolio": {
+        "apple": {
+            "current_qty": 100,
+            "transactions": {
+                "1586634060278703APPLE": {
+                    "price": 50.0,
+                    "quantity": 10,
+                    "time": 1586634060278660
+                },
+                "1586634060279552APPLE": {
+                    "price": 40.0,
+                    "quantity": 30,
+                    "time": 1586634060279548
+                },
+                "1586634060281769APPLE": {
+                    "price": 20.0,
+                    "quantity": 50,
+                    "time": 1586634060281763
+                },
+                "1586634060284740APPLE": {
+                    "price": 90.0,
+                    "quantity": -10,
+                    "time": 1586634060284734
+                },
+                "1586634060288982APPLE": {
+                    "price": 40.0,
+                    "quantity": 20,
+                    "time": 1586634060288975
+                }
+            }
+        },
+        "blue": {
+            "current_qty": 20,
+            "transactions": {
+                "1586634060316155BLUE": {
+                    "price": 90.0,
+                    "quantity": 10,
+                    "time": 1586634060316150
+                },
+                "1586634060317571BLUE": {
+                    "price": 60.0,
+                    "quantity": 30,
+                    "time": 1586634060317566
+                },
+                "1586634060321260BLUE": {
+                    "price": 20.0,
+                    "quantity": -20,
+                    "time": 1586634060321255
+                }
+            }
+        },
+        "lemon": {
+            "current_qty": 50,
+            "transactions": {
+                "1586634060306189LEMON": {
+                    "price": 20.0,
+                    "quantity": 40,
+                    "time": 1586634060306183
+                },
+                "1586634060308966LEMON": {
+                    "price": 40.0,
+                    "quantity": 20,
+                    "time": 1586634060308961
+                },
+                "1586634060311350LEMON": {
+                    "price": 70.0,
+                    "quantity": -10,
+                    "time": 1586634060311344
+                }
+            }
+        },
+        "orange": {
+            "current_qty": 10,
+            "transactions": {
+                "1586634060291142ORANGE": {
+                    "price": 20.0,
+                    "quantity": 40,
+                    "time": 1586634060291135
+                },
+                "1586634060292269ORANGE": {
+                    "price": 40.0,
+                    "quantity": -20,
+                    "time": 1586634060292265
+                },
+                "1586634060296493ORANGE": {
+                    "price": 50.0,
+                    "quantity": -10,
+                    "time": 1586634060296472
+                }
+            }
+        },
+        "penguin": {
+            "current_qty": 120,
+            "transactions": {
+                "1586634060314387PENGUIN": {
+                    "price": 80.0,
+                    "quantity": 120,
+                    "time": 1586634060314381
+                }
+            }
+        }
+    },
+    "previous_account_values": [
+        {
+            "amount": 10,
+            "time": "1586634060324862"
+        },
+        {
+            "amount": 100,
+            "time": "1586634060328306"
+        },
+        {
+            "amount": 200,
+            "time": "1586634060334155"
+        }
+    ]
+}
