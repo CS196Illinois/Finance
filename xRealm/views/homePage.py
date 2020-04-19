@@ -9,8 +9,11 @@ from matplotlib.figure import Figure
 from matplotlib import style
 style.use('ggplot')
 
-from ..models import write
+from ..models import *
 from write import Writer
+from EpochConverter import EpochConverter as ec
+
+
 
 matplotlib.rcParams['xtick.labelsize'] = 7
 matplotlib.rcParams['ytick.labelsize'] = 7
@@ -18,10 +21,8 @@ f = Figure(figsize = (4,5), dpi = 100)
 a = f.add_subplot()
 
 class TheApp(tk.Tk):
-    
-    
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
+    def __init__(self):
+        tk.Tk.__init__(self)
         tk.Tk.wm_title(self, 'xRealm')
         
         container = tk.Frame(self)
@@ -43,49 +44,38 @@ class TheApp(tk.Tk):
             frame.tkraise()
 
 def animate(i):
+    writer = Writer()
     times = []
     amounts = []
     
     writer = Writer()
     entry_array = writer.get_progressive_balances()
     for entry in entry_array:
-        times.append(entry['time'])
+        times.append(ec.get_date(int(entry['time'][:10])))
         amounts.append(entry['amount'])
-    
-    
+        
     a.clear()
     a.plot(times, amounts)
-            
     
 class HomePage(tk.Frame):
     def __init__(self, parent, controller):
         self.writer = Writer()
         
-        #print(self.writer.get_progressive_balances())
-        
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text = 'Home Page')
-        label.pack()
+        label = tk.Label(self, text = 'Home Page').pack()
         
         canvas = FigureCanvasTkAgg(f, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side = tk.TOP, fill = tk.BOTH, expand = True)
         
-        # unpack sampleData to get current $$$
-        # writer= Writer()
         value = self.writer.get_account_balance()
-        
-        label2 = tk.Label(self, text = 'Buying Power: ' + str(value))
-        label2.pack()
+        label2 = tk.Label(self, text = 'Buying Power: $' + str(value)).pack()
         
         button1 = ttk.Button(self, text = 'Yours',
-                             command = lambda: controller.show_frame(YoursPage))
-        button1.pack()
-        
+                             command = lambda: controller.show_frame(YoursPage)).pack()
         button2 = ttk.Button(self, text = 'Find',
-                             command = lambda: controller.show_frame(FindPage))
-        button2.pack()
-        
+                             command = lambda: controller.show_frame(FindPage)).pack()
+           
 class YoursPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -102,8 +92,8 @@ class FindPage(tk.Frame):
         label = tk.Label(self, text = 'Find Page')
         label.pack()
         button1 = ttk.Button(self, text = 'Back to home',
-                             command = lambda: controller.show_frame(HomePage))
-        button1.pack()
+                             command = lambda: controller.show_frame(HomePage)).pack()
+        
 
 app = TheApp()
 ani = animation.FuncAnimation(f, animate, interval = 1000)
