@@ -46,7 +46,7 @@ def buy_command():
     lb.insert(4, 'stock neeeeewww           getPrice()          getQuantity()')
 
 
-buybutton = tk.Button(window, text='buybutton', width=15, height=2, command=buy_command)
+buybutton = tk.Button(window, text='addbutton', width=15, height=2, command=buy_command)
 buybutton.pack()
 
 
@@ -63,5 +63,13 @@ def sell_command():
 sellbutton = tk.Button(window, text='sellbutton', width=15, height=2, command=sell_command)
 sellbutton.pack()
 
+"""""
+def trade_detail(self):
+    self.page.destroy()
+
+
+tradebutton = tk.Button(window, text='trade detail', width=15, height=2, command=trade_detail)
+tradebutton.pack()
+"""
 
 window.mainloop()
