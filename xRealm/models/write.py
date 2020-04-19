@@ -52,7 +52,7 @@ class Writer:
         """Creates an empty portfolio(dict), account balance(dict) and previous_account_values(list) inside user."""
 
         Writer.user['portfolio'] = {}
-        Writer.user['account_balance'] = 0.0
+        Writer.user['account_balance'] = 10000.0
         Writer.user['previous_account_values'] = []
 
     def update_account_balance(self, balance):
