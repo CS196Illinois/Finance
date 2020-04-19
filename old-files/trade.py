@@ -1,6 +1,7 @@
 # Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
 # Type "help", "copyright", "credits" or "license()" for more information.
 import tkinter as tk
+
 window = tk.Tk()
 window.title('stock detail')
 
@@ -11,7 +12,7 @@ l1 = tk.Label(window, textvariable=var2, bg='green',font=('Arial',14),width=15,h
 var2.set("getprice()")
 l1.pack()
 
-
+"""""
 on_hit = False
 def hit_me():
 	global on_hit
@@ -27,7 +28,7 @@ def hit_me():
 	else:
 	  on_hit=False
 	  var.set('')
-
+"""
 # general label
 genLbl = tk.Label(window, text = "STOCK", font = ("Arial Bold", 10))
 # genLbl.grid(column = 2, row = 0)

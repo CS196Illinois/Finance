@@ -21,7 +21,8 @@ b1 = tk.Button(window, text='print selection', width=15,
 b1.pack()
 var2 = tk.StringVar()
 # var2.set(('stock a', 'stock b', 'stock c', 'stock d'))
-lb = tk.Listbox(window, listvariable=var2)
+lb = tk.Listbox(window, listvariable=var2,width = 46)
+
 # list_items=[1,2,3,4]
 # for item in list_items:
 #   lb.insert('end',item)
@@ -42,7 +43,7 @@ l.pack()
 var5.set('wait for your selection')
 def buy_command():
     var5.set("I press the buy button. I need to increase something in list. And my account balance will decrease")
-    lb.insert(4, 'stock neeeeewww')
+    lb.insert(4, 'stock neeeeewww           getPrice()          getQuantity()')
 
 
 buybutton = tk.Button(window, text='buybutton', width=15, height=2, command=buy_command)
