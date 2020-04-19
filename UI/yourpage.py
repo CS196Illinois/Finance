@@ -21,7 +21,7 @@ b1 = tk.Button(window, text='print selection', width=15,
 b1.pack()
 var2 = tk.StringVar()
 # var2.set(('stock a', 'stock b', 'stock c', 'stock d'))
-lb = tk.Listbox(window, listvariable=var2,width = 46)
+lb = tk.Listbox(window, listvariable=var2, width = 46)
 
 # list_items=[1,2,3,4]
 # for item in list_items:
