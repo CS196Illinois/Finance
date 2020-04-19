@@ -1,5 +1,5 @@
 {
-    "account_balance": 100000.0,
+    "account_balance": 12900.0,
     "portfolio": {
         "apple": {
             "current_qty": 100,
@@ -104,16 +104,28 @@
     },
     "previous_account_values": [
         {
-            "amount": 10,
-            "time": "1586634060324862"
+            "amount": 157,
+            "time": "1586545200000"
         },
         {
-            "amount": 100,
-            "time": "1586634060328306"
+            "amount": 193,
+            "time": "1586631600000"
         },
         {
             "amount": 200,
-            "time": "1586634060334155"
+            "time": "1586718000000"
+        },
+    	{
+            "amount": 250,
+            "time": "1586977200000"
+        },
+    	{
+            "amount": 259,
+            "time": "1587236400000"
+        },
+    	{
+            "amount": 270,
+            "time": "1587236500000"
         }
     ]
 }
