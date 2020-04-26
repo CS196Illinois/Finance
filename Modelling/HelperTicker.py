@@ -1,16 +1,14 @@
-import yFinance as yf
+import yfinance as yf
+from yahoo_fin import stock_info as si
 import pandas as pd
 
-tickers = ['TSLA']
-# edit the tickers to get specific historical prices
-startDate = ["2020-04-16"]
-todayDate = ["2020-04-18"]
-# modify date to get specific price
+
+def gethistoricalprice(tickers):
+    return yf.history(tickers, period="max")
 
 
-def getHistoricalPrice():
-    return yf.history(period = "max")
+def getcurrentprice(tickers):
+    return si.get_live_price(tickers)
 
 
-def getCurrentPrice():
-    return yf.download(tickers, start = startDate, end = todayDate)
+print(getcurrentprice('TSLA'))
