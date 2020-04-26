@@ -44,7 +44,4 @@ stocksDisplay = tk.Listbox(StockList, listvariable=stocks)
 stocksDisplay.pack()
 
 
-#ex1 = tk.Frame(StockList, bg=ColorBloc)
-#ex1.grid(row=0, column=0)
-
 window.mainloop()

@@ -11,4 +11,3 @@ def getcurrentprice(tickers):
     return si.get_live_price(tickers)
 
 
-# print(getcurrentprice('AMZN'))

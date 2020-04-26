@@ -23,13 +23,7 @@ var2 = tk.StringVar()
 # var2.set(('stock a', 'stock b', 'stock c', 'stock d'))
 lb = tk.Listbox(window, listvariable=var2, width = 46)
 
-# list_items=[1,2,3,4]
-# for item in list_items:
-#   lb.insert('end',item)
-# lb.insert(1, 'stock e')
-# lb.insert(2, 'stock f')
-# lb.insert(3, 'stock g')
-# lb.insert(4, 'stock h')
+
 lb.pack()
 
 """""
