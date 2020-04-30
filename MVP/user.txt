@@ -5,11 +5,35 @@
             "current_qty": 0,
             "transactions": {}
         },
-        "ape": {
+        "MAC": {
             "current_qty": 0,
             "transactions": {}
         },
-        "apple": {
+        "MSFT": {
+            "current_qty": 0,
+            "transactions": {}
+        },
+        "PCL": {
+            "current_qty": 20,
+            "transactions": {
+                "1587873745853678BLUE": {
+                    "price": 90.0,
+                    "quantity": 10,
+                    "time": 1587873745853674
+                },
+                "1587873745857998BLUE": {
+                    "price": 60.0,
+                    "quantity": 30,
+                    "time": 1587873745857994
+                },
+                "1587873745862682BLUE": {
+                    "price": 20.0,
+                    "quantity": -20,
+                    "time": 1587873745862678
+                }
+            }
+        },
+        "R": {
             "current_qty": 100,
             "transactions": {
                 "1587873745814119APPLE": {
@@ -39,139 +63,52 @@
                 }
             }
         },
-        "blue": {
-            "current_qty": 20,
-            "transactions": {
-                "1587873745853678BLUE": {
-                    "price": 90.0,
-                    "quantity": 10,
-                    "time": 1587873745853674
-                },
-                "1587873745857998BLUE": {
-                    "price": 60.0,
-                    "quantity": 30,
-                    "time": 1587873745857994
-                },
-                "1587873745862682BLUE": {
-                    "price": 20.0,
-                    "quantity": -20,
-                    "time": 1587873745862678
-                }
-            }
-        },
-        "car": {
+        "TGT": {
             "current_qty": 0,
             "transactions": {}
         },
-        "cow": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "dragon": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "food": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "green": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "lemon": {
-            "current_qty": 50,
-            "transactions": {
-                "1587873745837922LEMON": {
-                    "price": 20.0,
-                    "quantity": 40,
-                    "time": 1587873745837919
-                },
-                "1587873745841593LEMON": {
-                    "price": 40.0,
-                    "quantity": 20,
-                    "time": 1587873745841589
-                },
-                "1587873745845415LEMON": {
-                    "price": 70.0,
-                    "quantity": -10,
-                    "time": 1587873745845411
-                }
-            }
-        },
-        "orange": {
-            "current_qty": 10,
-            "transactions": {
-                "1587873745827553ORANGE": {
-                    "price": 20.0,
-                    "quantity": 40,
-                    "time": 1587873745827549
-                },
-                "1587873745831049ORANGE": {
-                    "price": 40.0,
-                    "quantity": -20,
-                    "time": 1587873745831045
-                },
-                "1587873745834349ORANGE": {
-                    "price": 50.0,
-                    "quantity": -10,
-                    "time": 1587873745834345
-                }
-            }
-        },
-        "penguin": {
-            "current_qty": 120,
-            "transactions": {
-                "1587873745849462PENGUIN": {
-                    "price": 80.0,
-                    "quantity": 120,
-                    "time": 1587873745849458
-                }
-            }
-        },
-        "red": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "sky": {
-            "current_qty": 0,
-            "transactions": {}
-        },
-        "yellow": {
+        "THC": {
             "current_qty": 0,
             "transactions": {}
         }
     },
     "previous_account_values": [
         {
-            "amount": 10,
-            "time": "1587873745867423"
+            "amount": 100000,
+            "time": "1587873745860000"
         },
         {
-            "amount": 100,
+            "amount": 100000,
             "time": "1587873745872734"
         },
         {
-            "amount": 200,
+            "amount": 200000,
             "time": "1587873745878540"
+        },
+        {
+            "amount": 131489.0,
+            "time": "1588220732920572"
+        },
+        {
+            "amount": 131489.0,
+            "time": "1588220749218688"
+        },
+        {
+            "amount": 131489.0,
+            "time": "1588220900543208"
+        },
+        {
+            "amount": 131489.0,
+            "time": "1588221021422502"
         }
     ],
     "stock_names": [
-        "apple",
-        "orange",
-        "lemon",
-        "penguin",
-        "blue",
-        "green",
-        "orange",
-        "yellow",
-        "red",
-        "car",
-        "food",
-        "sky",
-        "ape",
-        "cow",
-        "dragon",
-        "AMG"
+        "AMG",
+        "MSFT",
+        "R",
+        "PCL",
+        "TGT",
+        "THC",
+        "MAC"
     ]
 }

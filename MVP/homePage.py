@@ -9,10 +9,10 @@ from matplotlib.figure import Figure
 from matplotlib import style
 style.use('ggplot')
 
-from MVP.write import Writer
-from MVP.EpochConverter import EpochConverter as ec
-from MVP.StockPage import StockDetails
-from MVP.vertical_scroll_frame import VerticalScrolledFrame
+from write import Writer
+from EpochConverter import EpochConverter as ec
+from StockPage import StockDetails
+from vertical_scroll_frame import VerticalScrolledFrame
 
 
 
@@ -25,6 +25,9 @@ class TheApp(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         tk.Tk.wm_title(self, 'xRealm')
+
+        writer = Writer()
+        writer.update_previous_account_values(writer.add_total_value())
         
         self.container = tk.Frame(self)
         self.container.pack(side = 'top', fill = 'both', expand = True)
@@ -108,7 +111,7 @@ class FindPage(tk.Frame):
         back_home = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomePage)).pack()
         # back_home.grid(column=0, row=1)
 
-        valid_tickers = ["ABT", "ABBV", "ACN", "ACE", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS",
+        valid_tickers = ["ABT", "ABBV", "ACN", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS",
                          "APD", "AKAM", "AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "ALTR", "MO", "AMZN", "AEE", "AAL",
                          "AEP", "AXP", "AIG", "AMT", "AMP", "ABC", "AME", "AMGN", "APH", "AON", "APA", "AIV", "AMAT",
                          "ADM", "AIZ", "T", "ADSK", "ADP", "AN", "AZO", "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC", "BK",
