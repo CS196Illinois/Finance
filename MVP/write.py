@@ -1,6 +1,8 @@
 import json
 import time as t
 
+from yfinance_helper import StockData
+
 class Writer:
     """
     The class that creates, edits and reads the user data
@@ -193,3 +195,22 @@ class Writer:
 
         with open('user.txt', 'r+') as jsonfile:
             json.dump(Writer.user, jsonfile, indent=4, sort_keys=True)
+
+    @staticmethod
+    def add_total_value():
+        with open('user.txt', 'r') as jsonfile:
+            file = json.load(jsonfile)
+            total_value = file['account_balance']
+            max = 0
+
+            for name in file['stock_names']:
+                stock_qty = file['portfolio'][name]['current_qty']
+                stock_data = StockData()
+                stock_price = stock_data.getCurrentPrice(name)
+                to_add = stock_price * stock_qty
+                total_value = total_value + to_add
+
+                if (max < total_value):
+                    max = total_value
+
+            return max
