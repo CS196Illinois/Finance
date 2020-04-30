@@ -7,7 +7,7 @@ from matplotlib import style
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
-from xRealm.models.StockData import StockData
+from MVP.yfinance_helper import StockData
 
 import matplotlib.animation as animation
 
@@ -27,7 +27,7 @@ f = Figure(figsize=(5, 5), dpi=100)
 a = f.add_subplot(111)
 
 # Global variables to graph stock
-ticker = "MSFT"
+ticker = ""
 time_interval = "1d"
 
 
@@ -53,11 +53,11 @@ class StockDetails(tk.Frame):
 
         self.update_animation(ticker)
 
-        label = tk.Label(self, text="Stock Details: " + ticker, font=LARGE_FONT)
+        label = tk.Label(self, text="Stock Details: " + tik, font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
         button1 = ttk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(StockDetails))
+                            command=lambda: controller.show_home())
         button1.pack()
 
         oneHour = ttk.Button(self, text="5M",
@@ -80,15 +80,18 @@ class StockDetails(tk.Frame):
         toolbar.update()
         canvas._tkcanvas.pack(side = tk.TOP, fill = tk.BOTH, expand = True)
 
-        quantity = Entry(self)
-        quantity.pack()
+        Label(self, text="Quantity").pack(side=LEFT)
+
+        var = StringVar()
+        quantity = Entry(self, textvariable=var)
+        quantity.pack(side=LEFT)
 
         button2 = ttk.Button(self, text="Buy",
-                            command=lambda: controller.show_frame(StockDetails))
+                            command=lambda: controller.new_transaction(ticker, StockData.getCurrentPrice(ticker), var.get()))
         button2.pack()
 
         button3 = ttk.Button(self, text = "Sell",
-                            command =lambda: controller.show_frame(self))
+                            command =lambda: controller.new_transaction(ticker, StockData.getCurrentPrice(ticker), "-" + var.get()))
         button3.pack()
 
     def setTimeInterval(self, interval, controller):

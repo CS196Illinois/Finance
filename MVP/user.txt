@@ -1,6 +1,10 @@
 {
     "account_balance": 100000.0,
     "portfolio": {
+        "AMG": {
+            "current_qty": 0,
+            "transactions": {}
+        },
         "ape": {
             "current_qty": 0,
             "transactions": {}
@@ -167,6 +171,7 @@
         "sky",
         "ape",
         "cow",
-        "dragon"
+        "dragon",
+        "AMG"
     ]
 }
