@@ -1,6 +1,5 @@
 import tkinter as tk
-import pickle
-import tkinter.messagebox
+
 window = tk.Tk()
 window.title('Your main page')
 window.geometry('900x600')
@@ -63,13 +62,14 @@ def sell_command():
 sellbutton = tk.Button(window, text='sellbutton', width=15, height=2, command=sell_command)
 sellbutton.pack()
 
-"""""
+
 def trade_detail(self):
     self.page.destroy()
 
 
+
 tradebutton = tk.Button(window, text='trade detail', width=15, height=2, command=trade_detail)
 tradebutton.pack()
-"""
+
 
 window.mainloop()
