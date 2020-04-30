@@ -54,7 +54,9 @@ class TheApp(tk.Tk):
         frame.tkraise()
 
     def new_transaction(self, ticker, price, qty):
-        print(qty)
+        if qty.startswith('-') and qty[1:].startswith('-'):
+            qty = qty[2:]
+            print(qty)
         if not Writer.stock_exists(ticker):
             Writer.add_stock(ticker)
 

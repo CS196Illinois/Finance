@@ -87,11 +87,11 @@ class StockDetails(tk.Frame):
         quantity.pack(side=LEFT)
 
         button2 = ttk.Button(self, text="Buy",
-                            command=lambda: controller.new_transaction(ticker, StockData.getCurrentPrice(ticker), var.get()))
+                            command=lambda: controller.new_transaction(ticker, StockData.getcurrentprice(ticker), var.get()))
         button2.pack()
 
         button3 = ttk.Button(self, text = "Sell",
-                            command =lambda: controller.new_transaction(ticker, StockData.getCurrentPrice(ticker), "-" + var.get()))
+                            command =lambda: controller.new_transaction(ticker, StockData.getcurrentprice(ticker), "-" + var.get()))
         button3.pack()
 
     def setTimeInterval(self, interval, controller):

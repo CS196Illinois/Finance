@@ -17,6 +17,10 @@ def getcurrentprice(tickers):
 #Sid's
 class StockData:
     @staticmethod
+    def getcurrentprice(tickers):
+        return si.get_live_price(tickers)
+
+    @staticmethod
     def getCurrentPrice(ticker):
         stock = yf.Ticker(ticker)
         price = stock.history(period="1d")["Close"][0]

@@ -1,13 +1,25 @@
 {
     "account_balance": 100000.0,
     "portfolio": {
-        "AMG": {
-            "current_qty": 0,
-            "transactions": {}
+        "AAP": {
+            "current_qty": 10,
+            "transactions": {
+                "1588219490831243AAP": {
+                    "price": 124.91000366210938,
+                    "quantity": "10",
+                    "time": 1588219490831239
+                }
+            }
         },
-        "ape": {
-            "current_qty": 0,
-            "transactions": {}
+        "AFL": {
+            "current_qty": 10,
+            "transactions": {
+                "1588220086064729AFL": {
+                    "price": 39.189998626708984,
+                    "quantity": "10",
+                    "time": 1588220086064726
+                }
+            }
         },
         "apple": {
             "current_qty": 100,
@@ -172,6 +184,10 @@
         "ape",
         "cow",
         "dragon",
-        "AMG"
+        "ADS",
+        "AAP",
+        "AES",
+        "ACE",
+        "AFL"
     ]
 }

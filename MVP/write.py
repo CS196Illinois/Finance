@@ -118,12 +118,12 @@ class Writer:
             'quantity' : quantity,
             'time' : time
         }
-        with open('user.txt', 'r') as jsonfile:
-            file = json.load(jsonfile)
-            current = file['portfolio'][name]["current_qty"]
-            total = current + int(quantity)
+        current = Writer.user['portfolio'][name]["current_qty"]
+        total = current + int(quantity)
         Writer.user['portfolio'][name]["current_qty"] = total
-        Writer.to_json()
+
+
+        Writer.write_file()
 
     @staticmethod
     def get_current_quantity(name):
