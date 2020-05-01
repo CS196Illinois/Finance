@@ -120,12 +120,14 @@ class Writer:
             'quantity' : quantity,
             'time' : time
         }
-        with open('user.txt', 'r') as jsonfile:
-            file = json.load(jsonfile)
-            current = file['portfolio'][name]["current_qty"]
-            total = current + int(quantity)
-        Writer.user['portfolio'][name]["current_qty"] = total
-        Writer.to_json()
+        current = Writer.user['portfolio'][name]["current_qty"]
+        total = current + int(quantity)
+        Writer.user['portfolio'][name]['current_qty'] = total
+
+        Writer.user['account_balance'] -= round(float(price) * int(quantity), 1)
+
+
+        Writer.write_file()
 
     @staticmethod
     def get_current_quantity(name):
@@ -198,23 +200,43 @@ class Writer:
 
     @staticmethod
     def add_total_value():
+        """ Adds up total account balance
+        :return: int
+        """
         with open('user.txt', 'r') as jsonfile:
             file = json.load(jsonfile)
             total_value = file['account_balance']
-            max = 0
 
             for name in file['stock_names']:
                 stock_qty = file['portfolio'][name]['current_qty']
-                stock_data = StockData()
-                stock_price = stock_data.getCurrentPrice(name)
+                stock_price = StockData.getCurrentPrice(name)
                 to_add = stock_price * stock_qty
                 total_value = total_value + to_add
+            return total_value
 
-                if (max < total_value):
-                    max = total_value
+    @staticmethod
+    def delete_stock(name):
+        """ deletes stock from list and dict
+        return none
 
-            return max
+        """
+        with open('user.txt', 'r') as jsonfile:
+            file = json.load(jsonfile)
+            del file['portfolio'][name]
+            file['stock_names'].remove(name)
+            Writer.write_file()
+
+    @staticmethod
+    def is_empty(name):
+        """ Returns true if current_qty is 0
+        return boolean
+        """
+        with open('user.txt', 'r') as jsonfile:
+            file = json.load(jsonfile)
+            if file['portfolio'][name]['current_qty'] == 0:
+                return True
+            else:
+                return False
 
 
-writer = Writer()
-print(writer.add_total_value())
+
