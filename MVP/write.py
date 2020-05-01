@@ -198,6 +198,9 @@ class Writer:
 
     @staticmethod
     def add_total_value():
+        """ Adds up total account balance
+        :return: int
+        """
         with open('user.txt', 'r') as jsonfile:
             file = json.load(jsonfile)
             total_value = file['account_balance']
@@ -212,5 +215,28 @@ class Writer:
 
                 if (max < total_value):
                     max = total_value
-
             return max
+
+    @staticmethod
+    def delete_stock(name):
+        """ deletes stock from list and dict
+        return none
+
+        """
+        with open('user.txt', 'r') as jsonfile:
+            file = json.load(jsonfile)
+            del file['portfolio'][name]
+            file['stock_names'].remove(name)
+            Writer.write_file()
+
+    @staticmethod
+    def is_empty(name):
+        """ Returns true if current_qty is 0
+        return boolean
+        """
+        with open('user.txt', 'r') as jsonfile:
+            file = json.load(jsonfile)
+            if file['portfolio'][name]['current_qty'] == 0:
+                return True
+            else:
+                return  False
