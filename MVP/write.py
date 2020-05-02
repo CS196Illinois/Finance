@@ -99,7 +99,6 @@ class Writer:
         with open('user.txt', 'r') as jsonfile:
             file = json.load(jsonfile)["portfolio"]
         for name in file:
-            print(name)
             if str(name) == ticker:
                 return True
         return False
@@ -209,7 +208,7 @@ class Writer:
 
             for name in file['stock_names']:
                 stock_qty = file['portfolio'][name]['current_qty']
-                stock_price = StockData.getCurrentPrice(name)
+                stock_price = StockData.getcurrentprice(name)
                 to_add = stock_price * stock_qty
                 total_value = total_value + to_add
             return total_value
