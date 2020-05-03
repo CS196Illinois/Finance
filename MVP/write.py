@@ -99,7 +99,6 @@ class Writer:
         with open('user.txt', 'r') as jsonfile:
             file = json.load(jsonfile)["portfolio"]
         for name in file:
-            print(name)
             if str(name) == ticker:
                 return True
         return False
@@ -122,7 +121,9 @@ class Writer:
         }
         current = Writer.user['portfolio'][name]["current_qty"]
         total = current + int(quantity)
-        Writer.user['portfolio'][name]["current_qty"] = total
+        Writer.user['portfolio'][name]['current_qty'] = total
+
+        Writer.user['account_balance'] -= round(float(price) * int(quantity), 1)
 
 
         Writer.write_file()
@@ -204,18 +205,13 @@ class Writer:
         with open('user.txt', 'r') as jsonfile:
             file = json.load(jsonfile)
             total_value = file['account_balance']
-            max = 0
 
             for name in file['stock_names']:
                 stock_qty = file['portfolio'][name]['current_qty']
-                stock_data = StockData()
-                stock_price = stock_data.getCurrentPrice(name)
+                stock_price = StockData.getcurrentprice(name)
                 to_add = stock_price * stock_qty
                 total_value = total_value + to_add
-
-                if (max < total_value):
-                    max = total_value
-            return max
+            return total_value
 
     @staticmethod
     def delete_stock(name):
@@ -239,4 +235,7 @@ class Writer:
             if file['portfolio'][name]['current_qty'] == 0:
                 return True
             else:
-                return  False
+                return False
+
+
+

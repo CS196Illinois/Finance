@@ -1,5 +1,5 @@
 import tkinter as tk
-from MVP.write import Writer
+from write import Writer
 
 class VerticalScrolledFrame(tk.Frame):
     """A pure Tkinter scrollable frame that actually works!

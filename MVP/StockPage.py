@@ -7,7 +7,7 @@ from matplotlib import style
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
-from MVP.yfinance_helper import StockData
+from yfinance_helper import StockData
 
 import matplotlib.animation as animation
 

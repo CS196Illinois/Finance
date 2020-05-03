@@ -18,6 +18,7 @@ from vertical_scroll_frame import VerticalScrolledFrame
 
 matplotlib.rcParams['xtick.labelsize'] = 7
 matplotlib.rcParams['ytick.labelsize'] = 7
+Writer.new_user_setup()
 f = Figure(figsize = (4,5), dpi = 100)
 a = f.add_subplot()
 
@@ -26,8 +27,7 @@ class TheApp(tk.Tk):
         tk.Tk.__init__(self)
         tk.Tk.wm_title(self, 'xRealm')
 
-        writer = Writer()
-        writer.update_previous_account_values(writer.add_total_value())
+        Writer.update_previous_account_values(Writer.add_total_value())
         
         self.container = tk.Frame(self)
         self.container.pack(side = 'top', fill = 'both', expand = True)
@@ -64,6 +64,7 @@ class TheApp(tk.Tk):
             Writer.add_stock(ticker)
 
         Writer.add_transaction(ticker, price, qty)
+        Writer.update_previous_account_values(Writer.add_total_value())
         self.show_frame(HomePage)
 
 def animate(i):
