@@ -59,12 +59,14 @@ class TheApp(tk.Tk):
     def new_transaction(self, ticker, price, qty):
         if qty.startswith('-') and qty[1:].startswith('-'):
             qty = qty[2:]
-            print(qty)
-        if not Writer.stock_exists(ticker):
-            Writer.add_stock(ticker)
-
-        Writer.add_transaction(ticker, price, qty)
-        Writer.update_previous_account_values(Writer.add_total_value())
+        if (int(Writer.get_current_quantity(ticker)) + int(qty)) > 0:
+            if Writer.get_account_balance() >= (int(qty) * price):
+                print(qty)
+                if not Writer.stock_exists(ticker):
+                    Writer.add_stock(ticker)
+        
+                Writer.add_transaction(ticker, price, qty)
+                Writer.update_previous_account_values(Writer.add_total_value())
         self.show_frame(HomePage)
 
 def animate(i):

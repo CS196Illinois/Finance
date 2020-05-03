@@ -6,7 +6,4 @@ import time
 class EpochConverter:
     @staticmethod
     def get_date(epoch_time):
-        return time.strftime('%y-%m-%d', time.localtime(epoch_time))
-    @staticmethod
-    def get_time(epoch_time):
-        return time.strftime('%H:%M:%S', time.localtime(epoch_time))
+        return time.strftime('%y-%m-%d', time.localtime(epoch_time)) + '\n' + time.strftime('%H:%M:%S', time.localtime(epoch_time))

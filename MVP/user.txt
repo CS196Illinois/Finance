@@ -1,5 +1,5 @@
 {
-    "account_balance": 100000.0,
+    "account_balance": 100279.89999999998,
     "portfolio": {
         "AMG": {
             "current_qty": 0,
@@ -68,8 +68,29 @@
             "transactions": {}
         },
         "THC": {
-            "current_qty": 0,
-            "transactions": {}
+            "current_qty": 1,
+            "transactions": {
+                "1588530997718446THC": {
+                    "price": 17.489999771118164,
+                    "quantity": "15",
+                    "time": 1588530997718446
+                },
+                "1588531345891239THC": {
+                    "price": 17.489999771118164,
+                    "quantity": "-7",
+                    "time": 1588531345891239
+                },
+                "1588531362708962THC": {
+                    "price": 17.489999771118164,
+                    "quantity": "-10",
+                    "time": 1588531362708962
+                },
+                "1588532413318840THC": {
+                    "price": 17.489999771118164,
+                    "quantity": "-14",
+                    "time": 1588532413318840
+                }
+            }
         }
     },
     "previous_account_values": [
@@ -100,6 +121,70 @@
         {
             "amount": 131489.0,
             "time": "1588221021422502"
+        },
+        {
+            "amount": NaN,
+            "time": "1588530254953498"
+        },
+        {
+            "amount": NaN,
+            "time": "1588530298379934"
+        },
+        {
+            "amount": NaN,
+            "time": "1588530330663006"
+        },
+        {
+            "amount": NaN,
+            "time": "1588530891411300"
+        },
+        {
+            "amount": NaN,
+            "time": "1588530999636613"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531019109805"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531143298025"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531319488546"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531347914680"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531365466797"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531713592248"
+        },
+        {
+            "amount": NaN,
+            "time": "1588531856124441"
+        },
+        {
+            "amount": NaN,
+            "time": "1588532293946006"
+        },
+        {
+            "amount": NaN,
+            "time": "1588532357018740"
+        },
+        {
+            "amount": NaN,
+            "time": "1588532416157102"
+        },
+        {
+            "amount": NaN,
+            "time": "1588532425574285"
         }
     ],
     "stock_names": [

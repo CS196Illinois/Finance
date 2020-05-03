@@ -17,6 +17,7 @@ import json
 import numpy as np
 
 from tkinter import *
+from write import Writer
 
 
 
@@ -55,6 +56,8 @@ class StockDetails(tk.Frame):
 
         label = tk.Label(self, text="Stock Details: " + tik, font=LARGE_FONT)
         label.pack(pady=10,padx=10)
+        if ticker in Writer.get_stock_names():
+            label = tk.Label(self, text = 'Shares: ' + str(Writer.get_current_quantity(ticker))).pack()
 
         button1 = ttk.Button(self, text="Back to Home",
                             command=lambda: controller.show_home())
@@ -85,7 +88,9 @@ class StockDetails(tk.Frame):
         var = StringVar()
         quantity = Entry(self, textvariable=var)
         quantity.pack(side=LEFT)
-
+        
+        
+        
         button2 = ttk.Button(self, text="Buy",
                             command=lambda: controller.new_transaction(ticker, StockData.getcurrentprice(ticker), var.get()))
         button2.pack()
